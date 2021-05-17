@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const { BOT_VERSION } = require("../utils/Constants");
 const Descriptions = require("../descriptions.json");
+const embed = require('../utils/Embed')
 
 module.exports = async ({ message, additional }) => {
   const [commandOption, ...options] = additional;

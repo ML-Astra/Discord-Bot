@@ -5,10 +5,10 @@
   },
   "schedule": {
     "short": "!schedule: Make and/or check a Schedule For Your friends to Know When Your Free! All Date and Times are in PST",
-    "long": "`!schedule: Make a Schedule For Your Friends That You Dont Have Know Your Online` \n Syntax to make a calender: `!schedule create {'M' 'T' 'W' 'TH' 'F' 'SAT' 'SUN'} {TIME: 7:00PM} \n To View Your Friends Calender, Please Use \n !schedule @user \n To Delete All Of Your Calenders, Please Use \n !schedule delete`"
+    "long": "`!schedule: Make a Schedule For Your Friends That You Dont Have Know Your Online` \n\n Syntax to make a calender: \n!schedule create {'M' 'T' 'W' 'TH' 'F' 'SAT' 'SUN'} {TIME: 7:00PM} \n To View Your Friends Calender, Please Use \n !schedule @user \n To Delete All Of Your Calenders, Please Use \n !schedule delete`"
   },
   "contributions": {
     "short": "!contributions See The People That Made Me! (even though they are all pretty stupid!) I Wouldn't Be Here Without Them! Go Check Em Out!",
-    "long": "!contributions View The Contributers That Helped Build YolkBot and Assisted During The Countless Errors Of Building Me, (im built different that's why ;)! I Appreciate you All For Helping Me Reach Aliveness, (even though life is pretty boring, now go spice it up and use some damn commands, so I dont feel useless. :D To Contribute To This Project And be Added To The List: http://github.com/Jac-Bo/Discord-Bot)"
+    "long": "!contributions View The Contributers That Helped Build YolkBot and Assisted During The Countless Errors Of Building Me, (im built different that's why ;)! \n\n **I Appreciate you All For Helping Me Reach Aliveness, (even though life is pretty boring, now go spice it up and use some damn commands, so I dont feel useless. :D** \n\n ___To Contribute To This Project And be Added To The List: http://github.com/Jac-Bo/Discord-Bot !___"
   }
 }

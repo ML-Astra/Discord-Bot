@@ -1,8 +1,10 @@
 const { MessageEmbed } = require("discord.js");
 const DataHandler = require("../utils/DataHandler");
 const { BOT_VERSION } = require("../utils/Constants");
+const ErrorEmbed = require('../utils/Error')
 
-const DOTW = ["M", "T", "W", "TH", "F", "SA", "SU"];
+
+const DOTW = [`M`, `T`, `W`, `TH`, `F`, `SA`, `SU`];
 
 module.exports = async ({ userid, client, message, additional }) => {
   const [commandOption, ...options] = additional;
@@ -13,23 +15,15 @@ module.exports = async ({ userid, client, message, additional }) => {
           // date + time
           let [date, time] = options;
           if (!DOTW.includes(date)) {
-            let errEmbed = new MessageEmbed()
-              .setAuthor(
-                `YolkBot Version: ${BOT_VERSION} \n SYNTAX_ERR: DATE EXPECTED, GOT ${date}`
-              )
-              .setDescription(
-                `You Must Specify a Valid Date To Schedule \n Valid Dates: ${DOTW.map(
-                  (d) => `"${d}"`
-                ).join(",")}`
-              );
-            message.channel.send(errEmbed).then((m) => {
+            let err = ErrorEmbed(message, `Please Use Only The Correct Date Mentioned: ${DOTW}`)
+            message.channel.send(err).then((m) => {
               m.delete({ timeout: 30_000 });
             });
             return;
           }
           const [_, hours, minutes] = /([0-9]{1,2})\:([0-9]{1,2})(?:P|A)?M/g
             .exec(time)
-            .map((t) => parseInt(t));
+            .map(t => parseInt(t));
           if (
             isNaN(hours) ||
             isNaN(minutes) ||

@@ -1,11 +1,10 @@
 const axios = require("axios");
 const { MessageEmbed } = require("discord.js");
-const { BOT_VERSION, BACKEND_PORT } = require("../utils/Constants");
-
+const { BOT_VERSION, BACKEND_PORT, URL} = require("../utils/Constants");
 module.exports = {
   get: async ({ message, userid }) => {
     const responseData = await axios.get(
-      `http://localhost:${BACKEND_PORT}/accounts`,
+      URL,
       {
         params: { UserID: userid },
       }
@@ -24,7 +23,7 @@ module.exports = {
     }
   },
   post: async ({ message, userid, date, time }) => {
-    const responseData = await axios.post(`http://localhost:${BACKEND_PORT}/`, {
+    const responseData = await axios.post(URL, {
       CalenderDate: date,
       CalenderTime: time,
       UserID: userid,
@@ -40,7 +39,7 @@ module.exports = {
   },
   delete: async (userid) => {
     const responseData = await axios.delete(
-      `http://localhost:${BACKEND_PORT}/accounts`,
+      URL,
       {
         data: { UserID: userid },
       }

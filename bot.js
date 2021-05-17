@@ -1,14 +1,9 @@
 //Bot Stuff and Stuff
-const dotenv = require("dotenv");
-const { Client } = require("discord.js");
+const client = require('./src/utils/Client')
 const CommandsHolder = require("./src/commands");
 const { BOT_VERSION, COMMAND_PREFIX } = require("./src/utils/Constants");
+const errEmbed = require('./src/utils/Error')
 
-dotenv.config();
-const API_TOKEN = process.env.BOT_TOKEN;
-
-const client = new Client();
-client.login(API_TOKEN);
 
 //Runs when YolkBot is Validated
 client.on("ready", () => {
@@ -26,12 +21,15 @@ client.on("ready", () => {
 
     //Actual Commands from `src/commands` and stuff now
     if (Object.keys(CommandsHolder).includes(command.toLowerCase())) {
+      try {
       await CommandsHolder[command]({
         userid: message.author.id,
         client,
         message,
         additional: [commandOption, ...options],
-      });
+      })} catch {
+        errEmbed(message, "ERR_SYNTAX_ERROR")
+      };
     } else {
       console.error(`This command '${command.toLowerCase()}' does not exist`);
       return;

@@ -2,8 +2,9 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 module.exports = {
-  BOT_VERSION: 0.5,
+  BOT_VERSION: "YolkBot Version 0.7",
   COMMAND_PREFIX: "!",
   BACKEND_PORT: process.env.PORT,
-  DESIRED_LOCATION_FOR_VC: process.env.DESIRED_LOCATION_FOR_VC,
+  DESIRED_LOCATION_FOR_VC: "843101271292116992",
+  URL: "https://yolkbot.herokuapp.com/accounts"
 };
