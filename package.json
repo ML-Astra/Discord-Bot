@@ -11,6 +11,7 @@
     "discord.js": "^12.5.3",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
+    "logger": "^0.0.1",
     "mongoose": "^5.12.8",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.7"
