@@ -6,7 +6,7 @@ module.exports = async (message, title, timeout = 30) => {
     const embedThing = new MessageEmbed() 
         .setColor(0xa497f8) 
         .setDescription('Successfully Deleted Voice Chat, Thank You For Using Our Services.')
-        .setTitle("To use again, !newlobby {'title'} {expiretime}"); // Creates the embed message
+        .setTitle("To use again, !lobby {'title'} {expiretime}"); // Creates the embed message
     const createdVC = await message.guild.channels.create(`Lobby-${title}`, {
         type: "voice",
     })

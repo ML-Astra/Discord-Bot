@@ -1,7 +1,7 @@
 {
-  "newlobby": {
-    "short": "!newlobby: Make VC to Talk To Friends",
-    "long": "*A quick way to create a voice channel for you and your friends!* Or if youre like me ***then youre a lonely fuck***! Kidding of course! :D \n **---Expires After Twenty Minutes, \n ---Syntax: !newlobby {lobbyname} {expiration time}**"
+  "lobby": {
+    "short": "!lobby: Make VC to Talk To Friends",
+    "long": "*A quick way to create a voice channel for you and your friends!* Or if youre like me ***then youre a lonely fuck***! Kidding of course! :D \n **---Expires After Twenty Minutes, \n ---Syntax: !lobby {lobbyname} {expiration time}**"
   },
   "schedule": {
     "short": "!schedule: Make and/or check a Schedule For Your friends to Know When Your Free! All Date and Times are in PST",

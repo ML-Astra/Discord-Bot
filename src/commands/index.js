@@ -5,7 +5,7 @@ const Help = require("./Help");
 
 module.exports = {
   schedule: Schedule,
-  newlobby: NewLobby,
+  lobby: NewLobby,
   contributions: Contributions,
   help: Help,
 };
