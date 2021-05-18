@@ -1,9 +1,11 @@
 const { MessageEmbed } = require("discord.js");
 const { BOT_VERSION } = require("../utils/Constants");
 const Descriptions = require("../descriptions.json");
-const embed = require('../utils/Embed')
+const embed = require('../utils/Embed');
+const { logger } = require("../../bot");
 
 module.exports = async ({ message, additional }) => {
+  logger.debug('Command: !help used.');
   const [commandOption, ...options] = additional;
   if (!commandOption) {
     //New embed that returns when user doesnt put any extra arguments

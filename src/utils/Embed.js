@@ -1,3 +1,6 @@
+
+// Disabled due to a unknown bug. -Astra
+
 // const {MessageEmbed} = require("discord.js");
 // const {BOT_VERSION} = require('./Constants')
 // module.exports = async (Color, Description, Title, Footer, {message}) => {
@@ -30,3 +33,5 @@
 //     }
 //     message.channel.send()
 // }
+
+

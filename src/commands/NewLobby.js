@@ -3,6 +3,7 @@ const sleep = require("../utils/sleep");
 const { DESIRED_LOCATION_FOR_VC, BOT_VERSION } = require("../utils/Constants");
 
 module.exports = async ({ client, message, additional }) => {
+  logger.debug('Command: !lobby used.');
   const [commandOption, ...options] = additional;
   let i = 1;
   let joinedVC = [];

@@ -7,6 +7,7 @@ const routes = require("./routes");
 
 //Dotenv stuff
 const dotenv = require("dotenv");
+const { logger } = require("./bot");
 dotenv.config();
 const uri = process.env.MONGO_URI;
 const PORT = process.env.PORT || 4000;
@@ -25,10 +26,19 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then(() => console.log("Database connected!"))
-  .catch((err) => console.log(err));
+  .then(() => {
+    console.log("Database connected!")
+    logger.info(`Connected to MongoDB`);
+  })
+  .catch((err) => {
+    console.log(err);
+    logger.error(err);
+  });
 
 // Middleware
 app.use("", routes);
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
+  logger.info(`Express Server Started on port ${PORT}`);
+});

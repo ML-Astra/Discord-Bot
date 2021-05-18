@@ -1,5 +1,6 @@
 const { DESIRED_LOCATION_FOR_VC, BOT_VERSION } = require("../utils/Constants");
-const {MessageEmbed} = require('discord.js')
+const {MessageEmbed} = require('discord.js');
+const { logger } = require("../../bot");
 module.exports = async (message, title, timeout = 30) => {
     const timeToDelete = parseInt(timeout) * 60 * 1000;
     console.log({timeout}) 
@@ -11,6 +12,8 @@ module.exports = async (message, title, timeout = 30) => {
         type: "voice",
     })
     .then(m => {
+            logger.debug(`Created Channel: ${title}`);
+        // Lobby Parameter = m -Astra
             m.setParent(DESIRED_LOCATION_FOR_VC);
             m.delete({timeout: timeToDelete})
                 .then(async (m) => {

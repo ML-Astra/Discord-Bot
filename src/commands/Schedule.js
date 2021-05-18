@@ -1,12 +1,14 @@
 const { MessageEmbed } = require("discord.js");
 const DataHandler = require("../utils/DataHandler");
 const { BOT_VERSION } = require("../utils/Constants");
-const ErrorEmbed = require('../utils/Error')
+const ErrorEmbed = require('../utils/Error');
+const { logger } = require("../../bot");
 
 
 const DOTW = [`M`, `T`, `W`, `TH`, `F`, `SA`, `SU`];
 
 module.exports = async ({ userid, client, message, additional }) => {
+  logger.debug('Command: !schedule used.');
   const [commandOption, ...options] = additional;
   if (commandOption) {
     switch (commandOption) {

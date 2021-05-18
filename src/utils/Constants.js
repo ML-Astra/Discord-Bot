@@ -6,5 +6,6 @@ module.exports = {
   COMMAND_PREFIX: "!",
   BACKEND_PORT: process.env.PORT,
   DESIRED_LOCATION_FOR_VC: "843101271292116992",
-  URL: "https://yolkbot.herokuapp.com/accounts"
+  URL: "https://yolkbot.herokuapp.com/accounts",
+  LOG_LEVEL: "debug"
 };
